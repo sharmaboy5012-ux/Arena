@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --font-orbitron: 'Orbitron', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --color-neon: #39ff14;
+  --color-neon-dark: #2bcc0f;
+  --color-dark-900: #0a0a0f;
+  --color-dark-800: #0f1019;
+  --color-dark-700: #161826;
+  --color-dark-600: #1e2035;
+  --color-dark-500: #262944;
+  --color-dark-400: #3a3d5c;
+  --color-dark-300: #4e5275;
+  --color-gold: #ffd700;
+  --color-silver: #c0c0c0;
+  --color-bronze: #cd7f32;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #39ff14 #0a0a0f;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0a0a0f;
+  color: white;
+  overflow-x: hidden;
+}
+
+@keyframes pulse-neon {
+  0%, 100% { box-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff1433; }
+  50% { box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #39ff1466; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14; }
+  50% { text-shadow: 0 0 15px #39ff14, 0 0 30px #39ff14, 0 0 45px #39ff14; }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.animate-pulse-neon {
+  animation: pulse-neon 2s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.neon-border {
+  border: 1px solid #39ff14;
+  box-shadow: 0 0 5px #39ff1433, inset 0 0 5px #39ff1411;
+}
+
+.neon-text {
+  color: #39ff14;
+  text-shadow: 0 0 5px #39ff1466;
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(22, 24, 38, 0.9), rgba(15, 16, 25, 0.95));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(57, 255, 20, 0.1);
+}
+
+.btn-neon {
+  background: linear-gradient(135deg, #39ff14, #2bcc0f);
+  color: #0a0a0f;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #39ff1433;
+}
+
+.btn-neon:hover {
+  box-shadow: 0 0 20px #39ff1466, 0 0 40px #39ff1433;
+  transform: translateY(-1px);
+}
+
+.btn-neon:active {
+  transform: translateY(0);
+}
